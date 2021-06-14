@@ -1,0 +1,13 @@
+#! /bin/bash
+#Script para gestionar la distribucion del teclado.
+#Valor por default: es 
+#Si el teclado en inglés está conectado, pasanos a Inglés Británico Extendido.
+
+xinput | grep "SINO WEALTH Gaming KB  Consumer Control" > /dev/null
+
+if [[ $? -eq 0 ]] ; then
+	echo "Found keyboard with UK layout"
+	setxkbmap gb extd
+else setxkbmap es
+fi
+

@@ -1,0 +1,20 @@
+#! /bin/bash
+if [[ -z $1 || -z $2 ]];then
+	if [[ $(xrandr | grep -Eo '\bconnected\b' | wc -l) -gt 1 ]]; then
+		screens=($(xrandr | grep -E '\bconnected\b' | grep -Eo '^\w+-\w*' | tr '\n' ' ')) && \
+			echo "Using ${screens[1]} and ${screens[0]} as screens" && \
+			$0 ${screens[1]} ${screens[0]} && \
+			exit 0
+		echo "ERROR: Not all display names were given.";exit 1
+	else
+		echo "Only one display connected"
+		$HOME/.scripts/set_wallpaper
+		exit 0
+	fi
+fi
+
+xrandr --addmode "$1" "3840x2160_24.00" && \
+xrandr --addmode "$1" "2560x1440R" && \
+xrandr --output "$1" --primary  --mode 2560x1440R --left-of "$2" && \
+echo "UHD resolutions added to $1 successfully"
+$HOME/.scripts/set_wallpaper
