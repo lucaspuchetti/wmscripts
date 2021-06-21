@@ -1,0 +1,6 @@
+#! /bin/bash
+# Helping script to centralize Xorg and DWM behaviour.
+# Makes screen dimmer.
+
+brightnessctl set 5%-; kill -46 $(pidof dwmblocks)
+

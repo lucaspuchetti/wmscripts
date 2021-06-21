@@ -1,0 +1,6 @@
+#! /bin/bash
+# Helping script to centralize Xorg and DWM behaviour.
+# Sets volume lower.
+
+amixer -q set Master 5%- unmute; kill -44 $(pidof dwmblocks)
+
