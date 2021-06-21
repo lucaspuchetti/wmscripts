@@ -1,0 +1,23 @@
+#! /bin/bash
+
+# sb-brightness: Muestra el nivel de Brillo actual.
+
+status_screen=intel_backlight
+
+status_brightness=$(($(brightnessctl get $status_screen) * 100 / $(brightnessctl max $status_screen)))
+
+if [ "$status_brightness" -gt "80" ]; then
+	icon="🌕"
+elif [ "$status_brightness" -gt "60" ]; then
+	icon="🌖"
+elif [ "$status_brightness" -gt "40" ]; then
+	icon="🌗"
+elif [ "$status_brightness" -gt "20" ]; then
+	icon="🌘"
+elif [ "$status_brightness" -gt "20" ]; then
+	icon="🌘"
+else
+	icon="🌑"
+fi
+
+printf "%s%3d%%" $icon $status_brightness
