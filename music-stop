@@ -1,0 +1,6 @@
+#! /bin/bash
+# Helping script to centralize Xorg and DWM behaviour.
+# Stops mpd playlist.
+
+mpc stop
+

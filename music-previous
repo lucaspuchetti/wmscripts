@@ -1,0 +1,6 @@
+#! /bin/bash
+# Helping script to centralize Xorg and DWM behaviour.
+# Plays previous song in  mpd playlist.
+
+mpc prev
+
