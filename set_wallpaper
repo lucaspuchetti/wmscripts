@@ -1,1 +1,2 @@
-feh --bg-scale /home/lucashp/Pictures/club707.png
+# Este comando establece el wallpaper. para cambiarlo, crear un link nuevo y re-ejecutar.
+feh --bg-scale /home/lucashp/.config/wallpaper
