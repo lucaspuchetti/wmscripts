@@ -15,6 +15,21 @@ fi
 
 xrandr --addmode "$1" "3840x2160_24.00" && \
 xrandr --addmode "$1" "2560x1440R" && \
-xrandr --output "$1" --primary  --mode 2560x1440R --left-of "$2" && \
+
+# HDMI 1080p
+#xrandr --output "$1" --primary  --mode 1920x1080 --output "$2" --off && \
+
+# HDMI 1444p 
+xrandr --output "$1" --primary  --mode 2560x1440R --output "$2" --off && \
+
+# HDMI 1080p Duplex
+#xrandr --output "$1" --primary  --mode 1920x1080 && \
+
+# HDMI 1444p  Duplex
+#xrandr --output "$1" --primary  --mode 2560x1440R && \
+
+# HDMI 1444p dual monitor
+#xrandr --output "$1" --primary  --mode 2560x1440R --right-of "$2" && \
+
 echo "UHD resolutions added to $1 successfully"
 $HOME/.scripts/set_wallpaper

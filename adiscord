@@ -1,0 +1,4 @@
+#! /bin/bash
+#This scripts runs discord with compatibility for ALSA.
+
+apulse discord

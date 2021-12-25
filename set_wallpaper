@@ -1,2 +1,2 @@
 # Este comando establece el wallpaper. para cambiarlo, crear un link nuevo y re-ejecutar.
-feh --bg-scale /home/lucashp/.config/wallpaper
+feh --bg-scale $HOME/.config/wallpaper
