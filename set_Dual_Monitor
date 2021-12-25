@@ -13,6 +13,9 @@ if [[ -z $1 || -z $2 ]];then
 	fi
 fi
 
+xrandr --newmode "2560x1440R"  241.50  2560 2608 2640 2720  1440 1443 1448 1481 +hsync -vsync
+xrandr --newmode "3840x2160_24.00"  266.75  3840 4056 4456 5072  2160 2163 2168 2192 -hsync +vsync
+
 xrandr --addmode "$1" "3840x2160_24.00" && \
 xrandr --addmode "$1" "2560x1440R" && \
 
@@ -32,4 +35,6 @@ xrandr --output "$1" --primary  --mode 2560x1440R --output "$2" --off && \
 #xrandr --output "$1" --primary  --mode 2560x1440R --right-of "$2" && \
 
 echo "UHD resolutions added to $1 successfully"
+
 $HOME/.scripts/set_wallpaper
+
